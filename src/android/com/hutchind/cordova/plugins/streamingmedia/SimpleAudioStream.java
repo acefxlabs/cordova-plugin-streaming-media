@@ -33,7 +33,7 @@ public class SimpleAudioStream extends Activity implements
 	@Override
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
-		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		//this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		Bundle b = getIntent().getExtras();
 		mAudioUrl = b.getString("mediaUrl");
 		String backgroundColor = b.getString("bgColor");
