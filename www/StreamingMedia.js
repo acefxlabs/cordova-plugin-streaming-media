@@ -30,11 +30,11 @@ StreamingMedia.prototype.playVideo = function (url, options) {
 
 StreamingMedia.install = function () {
 	console.log('Yomi is here');
-// 	if (!window.plugins) {
-// 		window.plugins = {};
-// 	}
-// 	window.plugins.streamingMedia = new StreamingMedia();
-// 	return window.plugins.streamingMedia;
+	if (!window.plugins) {
+		window.plugins = {};
+	}
+	window.plugins.streamingMedia = new StreamingMedia();
+	return window.plugins.streamingMedia;
 };
 
 cordova.addConstructor(StreamingMedia.install);
