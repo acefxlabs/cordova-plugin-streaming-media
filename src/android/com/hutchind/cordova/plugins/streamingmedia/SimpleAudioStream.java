@@ -74,8 +74,6 @@ public class SimpleAudioStream extends Activity implements
 		mMediaControllerView = new View(this);
 		audioView.addView(mMediaControllerView);
 		setContentView(audioView, relLayoutParam);
-		
-		print(this);
 
 		play();
 	}
@@ -102,6 +100,8 @@ public class SimpleAudioStream extends Activity implements
 			mMediaController = new MediaController(this);
 
 			mMediaPlayer.prepareAsync();
+			
+			mMediaPlayer.hide();
 
 			Log.d(TAG, "LoadClip Done");
 		} catch (Throwable t) {
