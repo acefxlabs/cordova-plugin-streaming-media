@@ -82,7 +82,8 @@ public class SimpleAudioStream extends Activity implements
 		Uri myUri = Uri.parse(mAudioUrl);
 		try {
 			if (mMediaPlayer == null) {
-				mMediaPlayer = new MediaPlayer();
+				//mMediaPlayer = new MediaPlayer();
+				mMediaPlayer = MediaPlayer.create(this,uri);
 			} else {
 				try {
 					mMediaPlayer.stop();
