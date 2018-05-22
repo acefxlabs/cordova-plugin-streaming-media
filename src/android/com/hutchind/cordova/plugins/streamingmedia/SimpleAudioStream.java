@@ -83,7 +83,7 @@ public class SimpleAudioStream extends Activity implements
 		try {
 			if (mMediaPlayer == null) {
 				//mMediaPlayer = new MediaPlayer();
-				mMediaPlayer = MediaPlayer.create(this,uri);
+				mMediaPlayer = MediaPlayer.create(this.uri);
 			} else {
 				try {
 					mMediaPlayer.stop();
@@ -102,7 +102,7 @@ public class SimpleAudioStream extends Activity implements
 
 			mMediaPlayer.prepareAsync();
 			
-			mMediaPlayer.hide();
+			//mMediaPlayer.hide();
 
 			Log.d(TAG, "LoadClip Done");
 		} catch (Throwable t) {
