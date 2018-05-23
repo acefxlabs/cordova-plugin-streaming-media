@@ -29,7 +29,7 @@ StreamingMedia.prototype.playVideo = function (url, options) {
 
 
 StreamingMedia.install = function () {
-	console.log('Yomi is here');
+	console.log(window);
 	if (!window.plugins) {
 		window.plugins = {};
 	}
