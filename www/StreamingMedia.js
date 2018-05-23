@@ -29,7 +29,7 @@ StreamingMedia.prototype.playVideo = function (url, options) {
 
 
 StreamingMedia.install = function () {
-	//console.log(window);
+	console.log(window);
 	if (!window.plugins) {
 		window.plugins = {};
 	}
