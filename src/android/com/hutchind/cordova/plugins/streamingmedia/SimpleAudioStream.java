@@ -30,11 +30,11 @@ public class SimpleAudioStream extends Service implements MediaPlayer.OnPrepared
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Bundle bundle = intent.getExtras();
-        if (bundle != null) {
-            String mediaUrl = bundle.getString("mediaUrl");
+        //Bundle bundle = intent.getExtras();
+        //if (bundle != null) {
+            String mediaUrl = "http://radio.domi.org.ng:8000/domi_media";// bundle.getString("mediaUrl");
             play(mediaUrl);
-        }
+        //}
         return super.onStartCommand(intent, flags, startId);
     }
 
