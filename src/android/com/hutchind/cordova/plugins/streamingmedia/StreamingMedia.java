@@ -83,8 +83,8 @@ public class StreamingMedia extends CordovaPlugin {
 					}
 					streamIntent.putExtras(extras);
 				}
-
-				cordovaObj.startActivityForResult(plugin, streamIntent, ACTIVITY_CODE_PLAY_MEDIA);
+				cordovaObj.getActivity().getApplicationContext().startService(streamIntent);	
+				//cordovaObj.startActivityForResult(plugin, streamIntent, ACTIVITY_CODE_PLAY_MEDIA);
 			}
 		});
 		return true;
