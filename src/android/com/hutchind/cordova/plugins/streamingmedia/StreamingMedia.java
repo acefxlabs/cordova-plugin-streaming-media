@@ -87,7 +87,7 @@ public class StreamingMedia extends CordovaPlugin {
 					streamIntent.putExtras(extras);
 				}
 				Log.d(TAG, "Calling stream service...");
-				cordovaObj.getActivity().getApplicationContext().startService(streamIntent);	
+				cordovaObj.getActivity().startService(streamIntent);	
 				//cordovaObj.startActivityForResult(plugin, streamIntent, ACTIVITY_CODE_PLAY_MEDIA);
 			}
 		});
