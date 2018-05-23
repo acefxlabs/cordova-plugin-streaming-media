@@ -20,7 +20,7 @@ public class SimpleAudioStream extends Activity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_simple_audio_stream_x);
+       // setContentView(R.layout.activity_simple_audio_stream_x);
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             Log.d(TAG, "Starting command...");
