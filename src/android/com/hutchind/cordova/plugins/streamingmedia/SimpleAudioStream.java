@@ -1,4 +1,4 @@
-package com.scoobyworks.mediaplayerapp;
+package com.hutchind.cordova.plugins.streamingmedia;
 
 import android.app.Service;
 import android.content.Intent;
@@ -13,13 +13,13 @@ import java.io.IOException;
 import static android.app.Activity.RESULT_CANCELED;
 import static android.app.Activity.RESULT_OK;
 
-public class SimpleAudioStream2 extends Service implements MediaPlayer.OnPreparedListener,
+public class SimpleAudioStream extends Service implements MediaPlayer.OnPreparedListener,
         MediaPlayer.OnErrorListener, MediaPlayer.OnCompletionListener, MediaPlayer.OnBufferingUpdateListener {
 
     private MediaPlayer mMediaPlayer;
     private String TAG = getClass().getSimpleName();
 
-    public SimpleAudioStream2() {
+    public SimpleAudioStream() {
     }
 
     @Override
