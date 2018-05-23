@@ -28,6 +28,7 @@ public class StreamingMedia extends CordovaPlugin {
 
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+		Log.d(TAG, "Caller execute called...");
 		this.callbackContext = callbackContext;
 		JSONObject options = null;
 
@@ -38,6 +39,7 @@ public class StreamingMedia extends CordovaPlugin {
 		}
 
 		if (ACTION_PLAY_AUDIO.equals(action)) {
+			Log.d(TAG, "Play audio called...");
 			return playAudio(args.getString(0), options);
 		} else if (ACTION_PLAY_VIDEO.equals(action)) {
 			return playVideo(args.getString(0), options);
@@ -48,6 +50,7 @@ public class StreamingMedia extends CordovaPlugin {
 	}
 
 	private boolean playAudio(String url, JSONObject options) {
+		Log.d(TAG, "Got to play audio...");
 		return play(SimpleAudioStream.class, url, options);
 	}
 	private boolean playVideo(String url, JSONObject options) {
@@ -57,7 +60,7 @@ public class StreamingMedia extends CordovaPlugin {
 	private boolean play(final Class activityClass, final String url, final JSONObject options) {
 		final CordovaInterface cordovaObj = cordova;
 		final CordovaPlugin plugin = this;
-
+		Log.d(TAG, "Inside play method...");
 		cordova.getActivity().runOnUiThread(new Runnable() {
 			public void run() {
 				final Intent streamIntent = new Intent(cordovaObj.getActivity().getApplicationContext(), activityClass);
@@ -83,6 +86,7 @@ public class StreamingMedia extends CordovaPlugin {
 					}
 					streamIntent.putExtras(extras);
 				}
+				Log.d(TAG, "Calling stream service...");
 				cordovaObj.getActivity().getApplicationContext().startService(streamIntent);	
 				//cordovaObj.startActivityForResult(plugin, streamIntent, ACTIVITY_CODE_PLAY_MEDIA);
 			}
