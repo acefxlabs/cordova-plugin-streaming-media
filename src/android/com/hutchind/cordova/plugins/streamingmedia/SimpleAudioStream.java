@@ -73,7 +73,7 @@ public class SimpleAudioStream extends Activity implements
         setContentView(audioView, relLayoutParam);
 		
 		//this line ensures transparent window does not respond to touch
-		getWindow().addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+		//getWindow().addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
 
         play();
     }
