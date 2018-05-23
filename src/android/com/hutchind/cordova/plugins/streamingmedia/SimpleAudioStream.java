@@ -30,6 +30,7 @@ public class SimpleAudioStream extends Service implements MediaPlayer.OnPrepared
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+            Log.d(TAG, "Starting player command...");
         //Bundle bundle = intent.getExtras();
         //if (bundle != null) {
             String mediaUrl = "http://radio.domi.org.ng:8000/domi_media";// bundle.getString("mediaUrl");
@@ -39,13 +40,16 @@ public class SimpleAudioStream extends Service implements MediaPlayer.OnPrepared
     }
 
     private void play(String mAudioUrl) {
+            Log.d(TAG, "Play called...");
         if (mMediaPlayer == null) {
+                Log.d(TAG, "Player initialized...");
             mMediaPlayer = new MediaPlayer();
         } else {
             mMediaPlayer.stop();
             mMediaPlayer.reset();
         }
         try {
+                Log.d(TAG, "Set player datasource...");
             mMediaPlayer.setDataSource(mAudioUrl); // Go to Initialized state
             mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
             mMediaPlayer.setOnPreparedListener(this);
