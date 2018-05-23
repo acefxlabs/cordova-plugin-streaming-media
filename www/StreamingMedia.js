@@ -34,6 +34,7 @@ StreamingMedia.install = function () {
 		window.plugins = {};
 	}
 	window.plugins.streamingMedia = new StreamingMedia();
+	console.log(window.plugins.streamingMedia);
 	return window.plugins.streamingMedia;
 };
 
